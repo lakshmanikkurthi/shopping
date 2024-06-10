@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Item</title>
+  <link rel="stylesheet" href="styles.css"> <!-- You can style your form using CSS -->
+</head>
+<body>
+
+  <form id="addItemForm">
+    <label for="imageId">Image ID:</label>
+    <input type="text" id="imageId" name="imageId" required><br><br>
+
+    <label for="itemName">Item Name:</label>
+    <input type="text" id="itemName" name="itemName" required><br><br>
+
+    <label for="itemPrice">Price:</label>
+    <input type="number" id="itemPrice" name="itemPrice" required><br><br>
+
+    <label for="itemDesc">Description:</label><br>
+    <textarea id="itemDesc" name="itemDesc" required></textarea><br><br>
+
+    <label for="itemImg">Image URL:</label>
+    <input type="text" id="itemImg" name="itemImg" required><br><br>
+
+    <input type="submit" value="Add Item">
+  </form>
+
+  <script src="src/data.js"></script> <!-- Your JavaScript file -->
+</body>
+</html>

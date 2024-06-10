@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="{{url_for('static',filename='login.css')}}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+</head>
+<body style="background-color: aqua;">
+
+<div class="navbar">
+    <h2>Login Form</h2>
+</div>
+<div class="main">
+    <center>
+        
+
+        <form action="/login" method="post">
+            <div class="imgcontainer">
+                <img src="static/images/avatar.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username" >
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" id="password">
+                <i class="bi bi-eye" id="togglePassword"></i>
+
+                <button type="submit">Login</button>
+                {% if error %}
+                <p><strong class="error">Error:</strong> {{ error }}</p>
+                {% endif %}
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <span class="psw"><a href="{{url_for('forgot')}}">Forgot password?</a></span>
+                <b>Don't Have Account</b>
+                <a href="{{url_for('register')}}">Register Here</a>
+            </div>
+        </form>
+    </center>
+</div>
+
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function (e) {
+        // toggle the type attribute
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+
+        // toggle the eye slash icon using Bootstrap icons
+        if (type === 'password') {
+            // Show the eye icon when the password is hidden
+            this.classList.remove('bi-eye-slash');
+            this.classList.add('bi-eye');
+        } else {
+            // Show the eye slash icon when the password is visible
+            this.classList.remove('bi-eye');
+            this.classList.add('bi-eye-slash');
+        }
+    });
+</script>
+
+</body>
+</html>

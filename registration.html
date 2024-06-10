@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <!-- <link rel="stylesheet" href="src/style.css"> -->
+  <style>
+    .navbar{
+           display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #212529;
+          color:white;
+          padding: 10px;
+          margin-top: 0 ;
+          margin-bottom: 50px;
+          width: 100%;
+/* position: fixed; */
+
+}
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] , input[type=email]{
+  width: 50%;
+  margin-left: 10px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+input[type=email]{
+  margin-left: 30px;
+}
+.submit {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+}
+
+.submit:hover {
+  opacity: 0.8;
+}
+.main{
+    display: flex;
+    border: 2px solid black;
+    left: 200px;
+    right: 200px;
+    width: 500px;
+    align-items: center;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 100px;
+
+}  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <h2>Registration Form</h2>
+  </div>
+  <center>
+  <div class="main">
+  <form id="registrationForm" target="_self">
+    <label for="username" class="name">Username:</label>
+    <input type="text" id="username" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" class ="mail" id="email" required><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" class="pwd" id="password" required><br><br>
+
+    <input type="submit" value="Register" class="submit">
+    <br><br>
+    <a href="login.html" class="login">Login Here</a>
+  </form>
+  </div>
+</center>
+
+
+
+
+  <script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the default form submission
+      
+      // Get values from the form
+      const username = document.getElementById("username").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+let details={"user":username,"pass":password}
+localStorage.setItem("data3",JSON.stringify(details))
+
+      // You can add further logic here like sending the data to a server, etc.
+    });
+  </script>
+</body>
+</html>

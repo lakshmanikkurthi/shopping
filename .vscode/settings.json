@@ -1,0 +1,9 @@
+{
+    "liveServer.settings.port": 5501,
+    "python.analysis.autoImportCompletions": true,
+    "python.testing.pytestArgs": [
+        "python"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}

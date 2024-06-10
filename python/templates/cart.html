@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clothing Store</title>
+<link rel='stylesheet' type='text/css' media='screen' href="{{url_for('static',filename='styles.css')}}">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="index.html">
+      <h2>Clothing Store</h2>
+    </a>
+
+    <a href="cart.html">
+      <div class="cart">
+        <i class="bi bi-cart2"></i>
+        <div id="cartAmount" class="cartAmount">0</div>
+      </div>
+    </a>
+
+  </div>
+
+  <div id="label" class="text-center"></div>
+
+  <div class="shopping-cart" id="shopping-cart"></div>
+  
+ <div id="id01" class="modal">
+  
+  <div class="modal-content2 animate"  >
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+     
+    </div>
+
+    <div class="container">
+   <form  class="myForm">
+    <h2 style="color:blueviolet">Thank You For choosing My Shooping-Cart</h2>
+    <div class="Whatsap">
+    <h3>    Your Order Successfully Done</h3>
+    <p>get message via Whatsap <i  style="color: green; font-size: 1.5em;cursor: pointer;"   class="bi bi-whatsapp"></i></p>
+    </div>
+   </form>  
+   
+    </div>
+    <div class="container">
+      <button type="button" onclick="closePopup()" class="cancelbtn1">Okay</button>
+    </div>
+  </div>
+ </div>
+    <script>
+  
+    </script>
+    
+
+</body>
+<script src="{{url_for('static',filename='data.js')}}"></script>
+<script src="{{url_for('static',filename='cart.js')}}"></script>
+
+
+</html>
